@@ -23,13 +23,13 @@ showFronter() {
 showFronter ${current}
 sleep 2
 
-# Wait for fronter file, populated by other script
-if [ ! -f fronter ]; then
-	sleep 1
-fi
-
 while : ; do
-	new=$(cat fronter)
+	new=$(curl https://api.lmhd.me/v1/fronter.json | jq -r .members[0].name)
+
+	if [[ ${fronter} == "null" ]]; then
+		new=system
+	fi
+
 	if [[ "${new}" != "${current}" ]]; then
 		echo "New Fronter: ${new}"
 		if [[ ${current} != "system" ]]; then
