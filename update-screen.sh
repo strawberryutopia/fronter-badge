@@ -16,7 +16,7 @@ FB=0
 current=system
 
 showFronter() {
-	sudo fbi --noverbose -a -d /dev/fb${FB} -T ${TTY} ${1}.jpg
+	sudo fbi --noverbose -a -d /dev/fb${FB} -T ${TTY} ${1}.png
 }
 showFronter ${current}
 sleep 1
