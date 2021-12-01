@@ -9,13 +9,13 @@ cd ${script_dir}
 echo running in... $PWD
 
 while : ; do
-        fronter=$(curl https://api.lmhd.me/v1/fronter.json | jq -r .members[0].name)
+	fronter=$(curl https://api.lmhd.me/v1/fronter.json | jq -r .members[0].name)
 
-        if [[ ${fronter} == "null" ]]; then
-                fronter=system
-        fi
+	if [[ ${fronter} == "null" ]]; then
+		fronter=system
+	fi
 
-        echo ${fronter} > fronter
+	echo ${fronter} > fronter
 
-        sleep 60
+	sleep 60
 done
