@@ -3,6 +3,16 @@ job "screen_service" {
   datacenters = ["davinhart-castle"]
   type = "service"
 
+  constraint {
+    attribute    = "${meta.cached_binaries}"
+    set_contains = "jq,fbi"
+  }
+
+  constraint {
+    attribute = "${meta.has_framebuffer}"
+    value     = true
+  }
+
   group "screen" {
     count = 1
 
