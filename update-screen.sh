@@ -41,5 +41,5 @@ while : ; do
 		current=${new}
 	fi
 
-	sleep 1
+	sleep 15
 done
