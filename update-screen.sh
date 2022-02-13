@@ -24,7 +24,6 @@ while : ; do
 		break
 	else
 		echo No internet
-		showImage no-internet
 		sleep 15
 	fi
 done
